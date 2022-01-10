@@ -9,19 +9,26 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
+    private Button buttonlogin;
+    private Button buttonregister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener(){
+        buttonlogin = (Button) findViewById(R.id.button2);
+        buttonlogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v)
             {
                 OpenLogin();
             }
+        });
+
+        buttonregister = (Button) findViewById(R.id.button);
+        buttonregister.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) { OpenRegister(); }
         });
 
         try{
@@ -32,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void OpenLogin(){
         Intent intent = new Intent(this,LoginPage.class);
+        startActivity(intent);
+    }
+
+    public void OpenRegister(){
+        Intent intent = new Intent(this,RegisterPage.class);
         startActivity(intent);
     }
 
