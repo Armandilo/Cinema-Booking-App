@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cinema Booking App</string>
+    <string name="full_name">full_name</string>
 </resources>
