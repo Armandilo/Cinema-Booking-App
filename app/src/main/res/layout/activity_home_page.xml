@@ -237,7 +237,8 @@
         android:background="#263238"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_navigation" />
+        app:menu="@menu/bottom_navigation"
+        app:labelVisibilityMode="unlabeled"/>
 
 
 </RelativeLayout>
