@@ -1,6 +1,8 @@
 package com.example.cinemabookingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,7 +16,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class HomePage extends AppCompatActivity {
 
     private RecyclerView movieRecyclerView, promoRecyclerView, upcomingMovieRecyclerView;
@@ -23,6 +24,16 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        //Get username
+        Intent i = getIntent();
+        String username = i.getStringExtra("username");
+
+        if(username.isEmpty()){
+            ((TextView)findViewById(R.id.username_display)).setText("User");
+        }
+        else
+            ((TextView)findViewById(R.id.username_display)).setText(username); //Display username
 
         //Hide action bar
         try{
@@ -41,8 +52,8 @@ public class HomePage extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.nav_movies:
-                        startActivity(new Intent(getApplicationContext(),RegisterPage.class));
+                    case R.id.nav_tickets:
+                        startActivity(new Intent(getApplicationContext(),Tickets.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_profile:

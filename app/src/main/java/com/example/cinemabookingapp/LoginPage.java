@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -31,6 +33,9 @@ public class LoginPage extends AppCompatActivity {
     //Open home page when button is clicked
     public void OpenHomePage(){
         Intent intent = new Intent(this,HomePage.class);
+        //Get and send username
+        String username = ((TextView)findViewById(R.id.username)).getText().toString();
+        intent.putExtra("username",username); //pass one piece of data to an activity
         startActivity(intent);
     }
 }
