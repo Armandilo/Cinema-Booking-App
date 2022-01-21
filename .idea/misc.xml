@@ -3,30 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19583333333333333" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19583333333333333" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/squarebox.xml" value="0.19583333333333333" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/font/poppins_bold.xml" value="0.20989583333333334" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_escaperoom.xml" value="0.3388998035363458" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_escaperoomtrailer.xml" value="0.36585365853658536" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_eternaltrailer.xml" value="0.3388998035363458" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_jujutsukaisen.xml" value="0.3026315789473684" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_jujutsutrailer.xml" value="0.36585365853658536" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_login_page.xml" value="0.1796875" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_mainmoviepage.xml" value="0.46358267716535434" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_monkeyking.xml" value="0.3388998035363458" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_monkeykingtrailer.xml" value="0.36585365853658536" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_moviespage.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_register_page.xml" value="0.1796875" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_shangchi.xml" value="0.3026315789473684" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_shangchitrailer.xml" value="0.36585365853658536" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_thebatman.xml" value="0.3388998035363458" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_theblackphone.xml" value="0.3388998035363458" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_user_profile_page.xml" value="0.22" />
-        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19583333333333333" />
-        <entry key="..\:/Users/arman/AndroidStudioProjects/CinemaBookingApp/app/src/main/res/layout/activity_login_page.xml" value="0.5" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/drawable-v24/search_movie_box.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/drawable/home_selector.xml" value="0.18658008658008657" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/drawable/profile_selector.xml" value="0.18658008658008657" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/drawable/selector.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/drawable/ticket_selector.xml" value="0.18658008658008657" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/activity_home_page.xml" value="0.25" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/activity_login_page.xml" value="0.25" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/activity_main.xml" value="0.3795423956931359" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/activity_register_page.xml" value="0.1" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/currentmovie_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/main_recycler_row_item.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/promo_layout.xml" value="0.43790849673202614" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/upcomingmovie_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
+        <entry key="..\:/Users/arman/AndroidStudioProjects/CinemaBookingApp/app/src/main/res/layout/activity_login_page.xml" value="0.33" />
         <entry key="..\:/Users/arman/AndroidStudioProjects/CinemaBookingApp/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/arman/AndroidStudioProjects/CinemaBookingApp/app/src/main/res/layout/activity_register_page.xml" value="0.33" />
+        <entry key="..\:/Users/arman/AndroidStudioProjects/CinemaBookingApp/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
       </map>
     </option>
   </component>
