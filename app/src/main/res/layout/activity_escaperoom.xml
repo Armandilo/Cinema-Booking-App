@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp"
+    android:background="@color/navyblue">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        tools:context=".moviespage">
+
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="157dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="ESCAPE ROOM"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="376dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="102dp"
+            android:layout_height="29dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="SYNOPSIS"
+            android:textColor="@color/white"
+            app:autoSizeTextType="uniform"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="430dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="330dp"
+            android:layout_height="201dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Six adventurous strangers travel to a mysterious building to experience the escape room; a game where players compete to solve a series of puzzles to win $10,000. What starts out as seemingly innocent fun soon turns into a living nightmare as the four men and two women discover each room is an elaborate trap that's part of a sadistic game of life or death."
+            android:textColor="@color/white"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="475dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="242dp"
+            android:layout_height="288dp"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="100dp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="73dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="false"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/escaperoom" />
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="40dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.476"
+            tools:layout_editor_absoluteX="40dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="203dp"
+            android:layout_height="45dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_light"
+            android:text="Watch Trailer"
+            android:textColor="@color/navyblue"
+            app:cornerRadius="10px"
+
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="769dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="203dp"
+            android:layout_height="45dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_light"
+            android:text="Get Ticket"
+            android:textColor="@color/navyblue"
+            app:cornerRadius="10px"
+
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="823dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/category"
+            tools:layout_editor_absoluteX="307dp"
+            tools:layout_editor_absoluteY="73dp" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/durationer"
+            tools:layout_editor_absoluteX="307dp"
+            tools:layout_editor_absoluteY="177dp" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ratinger"
+            tools:layout_editor_absoluteX="307dp"
+            tools:layout_editor_absoluteY="279dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="129dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="28dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/poppins_light"
+            android:text="MOVIE DETAIL"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="37dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

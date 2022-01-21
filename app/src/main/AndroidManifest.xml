@@ -10,7 +10,49 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CinemaBookingApp">
         <activity
+            android:name=".monkeykingtrailer"
+            android:exported="false" />
+        <activity
+            android:name=".jujutsutrailer"
+            android:exported="false" />
+        <activity
+            android:name=".escaperoomtrailer"
+            android:exported="false" />
+        <activity
+            android:name=".shangchitrailer"
+            android:exported="false" />
+        <activity
+            android:name=".eternaltrailer"
+            android:exported="false" />
+        <activity
+            android:name=".theblackphone"
+            android:exported="false" />
+        <activity
+            android:name=".thebatman"
+            android:exported="false" />
+        <activity
+            android:name=".monkeyking"
+            android:exported="false" />
+        <activity
+            android:name=".jujutsukaisen"
+            android:exported="false" />
+        <activity
+            android:name=".escaperoom"
+            android:exported="false" />
+        <activity
+            android:name=".shangchi"
+            android:exported="false" />
+        <activity
             android:name=".RegisterPage"
+            android:exported="false" />
+        <activity
+            android:name=".mainmoviepage"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfilePage"
+            android:exported="false" />
+        <activity
+            android:name=".moviespage"
             android:exported="false" />
         <activity
             android:name=".LoginPage"
