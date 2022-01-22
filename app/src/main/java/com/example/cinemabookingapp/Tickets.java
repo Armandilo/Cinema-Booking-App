@@ -42,7 +42,7 @@ public class Tickets extends AppCompatActivity {
         List<Integer> currentTicket = new ArrayList<>();
 
         currentTicket.add(R.drawable.shangchi_ticket);
-        currentTicket.add(R.drawable.shangchi_ticket);
+        currentTicket.add(R.drawable.eternals_ticket);
 
         TicketsAdapter ticketAdapter = new TicketsAdapter(currentTicket);
         ticketsRecycler.setAdapter(ticketAdapter);

@@ -15,16 +15,18 @@ import java.util.List;
 public class CurrentMoviesAdapter extends RecyclerView.Adapter<CurrentMoviesAdapter.CurrentMoviesViewHolder> {
 
     private List<Integer> currentMoviesList;
+    private OnPosterListener mcurrentMovieListListener;
     //Constructor
-    public CurrentMoviesAdapter(List<Integer> currentMoviesList){
+    public CurrentMoviesAdapter(List<Integer> currentMoviesList, OnPosterListener onPosterListener){
         this.currentMoviesList = currentMoviesList;
+        this.mcurrentMovieListListener = onPosterListener;
     }
 
     @NonNull
     @Override
     public CurrentMoviesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.currentmovie_layout,parent,false);
-        return new CurrentMoviesViewHolder(view);
+        return new CurrentMoviesViewHolder(view, mcurrentMovieListListener);
     }
 
     @Override
@@ -37,13 +39,26 @@ public class CurrentMoviesAdapter extends RecyclerView.Adapter<CurrentMoviesAdap
         return currentMoviesList.size();
     }
 
-    public class CurrentMoviesViewHolder extends RecyclerView.ViewHolder{
+    public class CurrentMoviesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView imageView;
-        public CurrentMoviesViewHolder(@NonNull View itemView) {
+        OnPosterListener onPosterListener;
+        public CurrentMoviesViewHolder(@NonNull View itemView, OnPosterListener onPosterListener) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.movie_poster);
+            this.onPosterListener = onPosterListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            onPosterListener.onPosterClick(getAdapterPosition());
+
+        }
+    }
+
+    public interface OnPosterListener{
+        void onPosterClick(int position);
     }
 }

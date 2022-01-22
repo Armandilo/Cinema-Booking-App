@@ -18,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage extends AppCompatActivity {
+public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.OnPosterListener {
 
     private RecyclerView movieRecyclerView, promoRecyclerView, upcomingMovieRecyclerView;
 
@@ -75,7 +75,7 @@ public class HomePage extends AppCompatActivity {
         currentMoviesList.add(R.drawable.eternals);
         currentMoviesList.add(R.drawable.escaperoom);
 
-        CurrentMoviesAdapter currentMoviesAdapter = new CurrentMoviesAdapter(currentMoviesList);
+        CurrentMoviesAdapter currentMoviesAdapter = new CurrentMoviesAdapter(currentMoviesList,this);
         movieRecyclerView.setAdapter(currentMoviesAdapter);
 
         //promo RecyclerView
@@ -105,5 +105,12 @@ public class HomePage extends AppCompatActivity {
 
         UpcomingMoviesAdapter upcomingMoviesAdapter = new UpcomingMoviesAdapter(imageList);
         upcomingMovieRecyclerView.setAdapter(upcomingMoviesAdapter);
+    }
+
+    @Override
+    public void onPosterClick(int position) {
+        Intent intent = new Intent(this, MovieDetails.class);
+        intent.putExtra("movie", position);
+        startActivity(intent);
     }
 }
