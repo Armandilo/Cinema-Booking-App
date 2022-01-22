@@ -7,8 +7,11 @@ android:layout_height="wrap_content"
 android:layout_marginTop="8dp"
     android:layout_marginLeft="10dp"
     android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@android:color/transparent"
 app:cardCornerRadius="10dp"
-app:cardElevation="50dp">
+app:cardElevation="0dp">
+
+
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -18,6 +21,7 @@ app:cardElevation="50dp">
         android:id="@+id/tickets"
         android:layout_width="362dp"
         android:layout_height="138dp"
+        android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/shangchi_ticket"
         app:layout_constraintBottom_toBottomOf="parent"
