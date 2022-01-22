@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
+    android:layout_marginLeft="10sp"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="10dp"
     app:cardCornerRadius="16dp"
@@ -20,7 +20,8 @@
             android:layout_height="120dp"
             android:layout_margin="15dp"
             android:scaleType="fitXY"
-            android:src="@drawable/promo_1" />
+            android:src="@drawable/promo_1"
+            tools:layout_editor_absoluteX="15dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 

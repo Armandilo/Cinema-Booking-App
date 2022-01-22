@@ -2,8 +2,10 @@ package com.example.cinemabookingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,24 +48,21 @@ public class HomePage extends AppCompatActivity {
 
         //Set Home Selected
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
-/*
+
         //Perform ItemSelectedList
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch(menuItem.getItemId()){
-                    case R.id.nav_tickets:
-                        startActivity(new Intent(getApplicationContext(),Tickets.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.nav_profile:
-                        //startActivity(new Intent(getApplicationContext(),Profile.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
+        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+            switch(menuItem.getItemId()){
+                case R.id.nav_home:
+                    startActivity(new Intent(getApplicationContext(), HomePage.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.nav_tickets:
+                    startActivity(new Intent(getApplicationContext(),Tickets.class));
+                    overridePendingTransition(0,0);
+                    return true;
             }
-        });*/
+            return false;
+        });
 
         //movie RecyclerView
         movieRecyclerView = findViewById(R.id.movieRecyclerView);
