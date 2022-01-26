@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class LoginPage extends AppCompatActivity {
 
     private Button buttonhomepage;
+    private Button buttonuserprofile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,11 @@ public class LoginPage extends AppCompatActivity {
         buttonhomepage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) { OpenHomePage(); }
+        });
+        buttonuserprofile = (Button) findViewById(R.id.button4);
+        buttonuserprofile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) { OpenUserProfile(); }
         });
 
         try{
@@ -36,6 +42,10 @@ public class LoginPage extends AppCompatActivity {
         //Get and send username
         String username = ((TextView)findViewById(R.id.username)).getText().toString();
         intent.putExtra("username",username); //pass one piece of data to an activity
+        startActivity(intent);
+    }
+    public void OpenUserProfile(){
+        Intent intent = new Intent(this,EditProfile.class);
         startActivity(intent);
     }
 }
