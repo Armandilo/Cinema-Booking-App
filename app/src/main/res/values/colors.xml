@@ -10,5 +10,6 @@
     <color name="navyblue"> #263238 </color>
     <color name="greenish"> #37474F </color>
     <color name= "blueish"> #78909C </color>
+    <color name= "turqoise"> #607D8B </color>
 
 </resources>

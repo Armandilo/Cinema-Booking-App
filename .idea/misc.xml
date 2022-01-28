@@ -17,14 +17,19 @@
         <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/promo_layout.xml" value="0.43790849673202614" />
         <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/layout/upcomingmovie_layout.xml" value="0.2" />
         <entry key="..\:/Users/Hana/CAT201-GP/app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
+        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/datebox.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/datetime_selector.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/rectangle.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/rectangle2.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/reserved.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/squarebox.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/ticket_selector.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/toggle_selector.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/drawable/whiterect.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_home_page.xml" value="0.14945652173913043" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_movie_details.xml" value="0.15760869565217392" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_moviespage.xml" value="0.5" />
+        <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_selectdatetime.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_selectseat.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_ticket_details.xml" value="0.15760869565217392" />
         <entry key="..\:/Users/Nurul Iffah/AndroidStudioProjects/Cinema-Booking-App/app/src/main/res/layout/activity_tickets.xml" value="0.15760869565217392" />
