@@ -146,11 +146,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.200">
+            app:layout_constraintVertical_bias="0.200"
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="10">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regUsername"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="Username" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -166,9 +171,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.400">
+            app:layout_constraintVertical_bias="0.400"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regEmail"
+                android:hint="Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -188,11 +196,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.600"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -213,11 +225,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias=".800"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regConfirmPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -238,7 +254,7 @@
             android:id="@+id/textView8"
             android:layout_width="283dp"
             android:layout_height="38dp"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_light"
             android:text="By joining FlixPrime, you agreed to our Terms of service and Privacy policy"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
@@ -256,6 +272,7 @@
             android:layout_height="61dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="#5769D0"
+            android:onClick="confirmInput"
             android:text="Create Account"
             android:textAllCaps="false"
             app:cornerRadius="35px"

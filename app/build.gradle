@@ -41,7 +41,7 @@ dependencies {
     //dependency for circular image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    //dependency for credit card
+    //dependency for card form
     implementation 'com.braintreepayments:card-form:5.3.0'
 
 }
