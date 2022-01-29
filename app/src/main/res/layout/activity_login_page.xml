@@ -154,7 +154,7 @@
             android:id="@+id/textView8"
             android:layout_width="283dp"
             android:layout_height="38dp"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_light"
             android:text="By joining FlixPrime, you agreed to our Terms of service and Privacy policy"
             android:textAlignment="center"
             android:textColor="#FFFFFF"

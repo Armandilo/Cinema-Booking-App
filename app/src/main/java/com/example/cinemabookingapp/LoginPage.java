@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -42,6 +43,7 @@ public class LoginPage extends AppCompatActivity {
         //Get and send username
         String username = ((TextView)findViewById(R.id.username)).getText().toString();
         intent.putExtra("username",username); //pass one piece of data to an activity
+        Toast.makeText(this, "Welcome back to FlixPrime " + username, Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
     public void OpenUserProfile(){

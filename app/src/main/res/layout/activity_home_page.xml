@@ -53,17 +53,27 @@
                     app:layout_constraintStart_toEndOf="@+id/textView9"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/editText"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintHorizontal_bias="0.059"
+                    app:layout_constraintStart_toEndOf="@+id/textView11"
+                    app:layout_constraintTop_toBottomOf="@+id/username_display"
+                    app:layout_constraintVertical_bias="0.176" />
+
+                <ImageView
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Location"
-                    android:textColor="#FFFFFF"
                     app:layout_constraintEnd_toEndOf="@+id/textView9"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textView9"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    app:srcCompat="@drawable/ic_baseline_location_on_24"/>
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -77,7 +87,7 @@
                     app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@drawable/profilepic" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/editText"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
@@ -148,7 +158,6 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp"
                     android:clipToPadding="false"
-
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"

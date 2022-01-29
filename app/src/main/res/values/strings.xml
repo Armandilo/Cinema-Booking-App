@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">Cinema Booking App</string>
     <string name="full_name">full_name</string>
+    <string-array name="location">
+        <item>Kuala Lumpur</item>
+        <item>Kedah</item>
+        <item>Kelantan</item>
+        <item>Selangor</item>
+        <item>Pahang</item>
+        <item>Perak</item>
+        <item>Pulau Pinang</item>
+        <item>Perlis</item>
+        <item>Putrajaya</item>
+        <item>Melaka</item>
+        <item>Johor</item>
+        <item>Terengganu</item>
+        <item>Negeri Sembilan</item>
+        <item>Sabah</item>
+        <item>Sarawak</item>
+        <item>Labuan</item>
+    </string-array>
+    <string-array name="searchmovies">
+        <item>Shang-Chi and The Legend of The Ten Rings</item>
+        <item>Eternals</item>
+        <item>Escape Room: Tournament of Champions</item>
+        <item>Jujutsu Kaisen 0</item>
+        <item>The Batman</item>
+        <item>The Black Phone</item>
+        <item>The Monkey King: The Legend Begins</item>
+    </string-array>
 </resources>
