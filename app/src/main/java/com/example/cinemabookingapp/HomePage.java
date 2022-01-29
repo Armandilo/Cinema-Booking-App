@@ -3,6 +3,9 @@ package com.example.cinemabookingapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +45,18 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
             this.getSupportActionBar().hide();
         }
         catch(NullPointerException e){}
+
+        //Location spinner
+        Spinner spinner = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.location, R.layout.color_spinner_layout);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        //Search Movie
+        String[] searchmovies = getResources().getStringArray(R.array.searchmovies);
+        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.editText);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, searchmovies);
+        autoCompleteTextView.setAdapter(arrayAdapter);
 
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
