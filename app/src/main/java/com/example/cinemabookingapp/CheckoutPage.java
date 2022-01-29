@@ -23,10 +23,8 @@ public class CheckoutPage extends AppCompatActivity {
     Button pay;
     AlertDialog.Builder alertBuilder, alertBuilder2;
     private CheckBox payCash, payDebitCard;
-    public String paymentMode=null, paymentStatus=null, movieName="Eternals", movieDate="20 NOV";//Convert movieName to movieDate to get Intent
-    public int option=0;
-
-
+    public String paymentMode=null, paymentStatus=null, movieName="Eternals", movieDate="20 NOV";//You should convert movieName to movieDate to get Intent
+    //Get intent from BookingDetails for movieName, movieDate (for now, I included dummy data for this)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,57 +190,6 @@ public class CheckoutPage extends AppCompatActivity {
                 }
             }
         });
-
-
-        /*
-                else if(payCash.isChecked()){
-                    alertBuilder = new AlertDialog.Builder(CheckoutPage.this);
-                    alertBuilder.setTitle("Confirm before purchase");
-                    alertBuilder.setMessage("You choose to pay by cash at the cinema counter.");
-                    alertBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                            Toast.makeText(CheckoutPage.this, "Payment must be made at the cinema counter before watching the movie.", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    alertBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    });
-                    AlertDialog alertDialog = alertBuilder.create();
-                    alertDialog.show();
-                }else if(payDebitCard.isChecked()){
-                    if (cardForm.isValid()){
-                        alertBuilder2 = new AlertDialog.Builder(CheckoutPage.this);
-                        alertBuilder2.setTitle("Confirm before purchase");
-                        alertBuilder2.setMessage("Name: " + cardForm.getCardholderName() + "\n" +
-                                "Card number: " + cardForm.getCardNumber() + "\n" +
-                                "Card expiry date: " + cardForm.getExpirationDateEditText().getText().toString() + "\n" +
-                                "Card CVV: " + cardForm.getCvv() + "\n");
-                        alertBuilder2.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                                Toast.makeText(CheckoutPage.this, "Payment successful, your account has been deducted.", Toast.LENGTH_LONG).show();
-                            }
-                        });
-                        alertBuilder2.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                            }
-                        });
-                        AlertDialog alertDialog = alertBuilder2.create();
-                        alertDialog.show();
-                }else {
-                        Toast.makeText(CheckoutPage.this, "Please complete the form.", Toast.LENGTH_LONG).show();
-                }
-                }
-            }
-        });*/
 
     }
 }

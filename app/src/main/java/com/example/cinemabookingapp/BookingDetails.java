@@ -19,6 +19,7 @@ public class BookingDetails extends AppCompatActivity {
     private Button buttoncheckoutpage, redeemPromoCode;
     private CheckBox termsCondition;
     public Double priceDeducted = 0.0;
+    //Get intent from previous activity for movieName, movieDate, movieTime, ticketNum
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
