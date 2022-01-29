@@ -14,14 +14,6 @@ import java.util.regex.Pattern;
 
 
 public class RegisterPage extends AppCompatActivity {
-    public static final Pattern PASSWORD_PATTERN = Pattern.compile("^" +
-                                                                    "(?=.*[0-9])" + //at least 1 digit
-                                                                    "(?=.*[a-z])" + //at least 1 lowercase letter
-                                                                    "(?=.*[A-Z])" + //at least 1 uppercase letter
-                                                                    "(?=.*[@#$%^&+=])" + //at least 1 special character
-                                                                    "(?=\\S+$)" + //no white spaces
-                                                                    ".{6,}" + //at least 6 characters
-                                                                    "$");
     public static final Pattern EMAIL_ADDRESS = Pattern.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}"+
                                                                 "\\@"+
                                                                 "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
@@ -95,9 +87,6 @@ public class RegisterPage extends AppCompatActivity {
         if (passwordInput.isEmpty()){
             regPassword.setError("Field cannot be empty");
             return false;
-        }else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()){
-            regPassword.setError("Password too weak");
-            return false;
         }
         else{
             regPassword.setError(null);
@@ -114,20 +103,19 @@ public class RegisterPage extends AppCompatActivity {
         if (passwordConfirmInput.isEmpty()){
             regConfirmPassword.setError("Field cannot be empty");
             return false;
-        }else if (passwordConfirmInput != regPassword.getEditText().getText().toString().trim()){
-            regConfirmPassword.setError("Password is not the same.");
+        }else if (!passwordConfirmInput.equals(regPassword.getEditText().getText().toString().trim())){
+            regConfirmPassword.setError("Password does not match");
             return false;
         }else{
             regPassword.setError(null);
             regPassword.setErrorEnabled(false);
             return true;
         }
-
     }
 
     //Confirm all input
     public void confirmInput(View v){
-        if (!validateUsername() | !validateEmail() | !validatePassword() | validateConfirmPassword() ){
+        if (!validateUsername() | !validateEmail() | !validatePassword() | !validateConfirmPassword() ){
             return;
         }
 
