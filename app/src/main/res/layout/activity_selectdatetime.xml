@@ -11,138 +11,145 @@
         android:id="@+id/datentime"
         android:layout_width="198dp"
         android:layout_height="25dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_light"
         android:text="SELECT DATE AND TIME"
         android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="38dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="410dp"
         android:layout_height="101dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="110dp">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-            <ToggleButton
-                android:id="@+id/date1"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft = "9dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="19 Nov"
-                android:textOn="19 Nov"
-                android:layout_marginLeft="10dp"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="11 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-            <ToggleButton
-                android:id="@+id/date2"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="20 Nov"
-                android:textOn="20 Nov"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="12 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-            <ToggleButton
-                android:id="@+id/date3"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="21 Nov"
-                android:textOn="21 Nov"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="13 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-            <ToggleButton
-                android:id="@+id/date4"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="22 Nov"
-                android:textOn="22 Now"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="14 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-            <ToggleButton
-                android:id="@+id/date5"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="23 Nov"
-                android:textOn="23 Nov"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="15 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-            <ToggleButton
-                android:id="@+id/date6"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="24 Nov"
-                android:textOn="24 Nov"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="16 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-            <ToggleButton
-                android:id="@+id/date7"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="25 Nov"
-                android:textOn="25 Nov"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="17 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-            <ToggleButton
-                android:id="@+id/date8"
-                android:layout_width="61dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/squarebox"
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="67dp"
+                android:layout_height="81dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
                 android:fontFamily="@font/poppins_light"
-                android:onClick="onCustomToggleClick"
-                android:textColor="@color/white"
-                android:textOff="26 Nov"
-                android:textOn="26 Nov"
-                tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:text="18 NOV"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
@@ -156,58 +163,92 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403"
         app:srcCompat="@drawable/squarebox" />
 
-    <TextView
-        android:id="@+id/ioimall"
-        android:layout_width="198dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="268dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins_light"
-        android:text="Putrajaya - IOI City Mall"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="53dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="349dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="58dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
 
-    <ToggleButton
-        android:id="@+id/sembilan"
-        android:layout_width="66dp"
-        android:layout_height="32dp"
-        android:background="@drawable/squarebox"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="onCustomToggleClick"
-        android:textColor="@color/white"
-        android:textOff="09:00"
-        android:textOn="09:00"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="301dp" />
 
-    <ToggleButton
-        android:id="@+id/duabelas"
-        android:layout_width="66dp"
-        android:layout_height="32dp"
-        android:background="@drawable/squarebox"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="onCustomToggleClick"
-        android:textColor="@color/white"
-        android:textOff="12:00"
-        android:textOn="12:00"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="301dp" />
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="63dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="12:00"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.342"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
 
-    <ToggleButton
-        android:id="@+id/enambelas"
-        android:layout_width="66dp"
-        android:layout_height="32dp"
-        android:background="@drawable/squarebox"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="onCustomToggleClick"
-        android:textColor="@color/white"
-        android:textOff="16:00"
-        android:textOn="16:00"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="301dp" />
+        <RadioButton
+            android:id="@+id/radioButton10"
+            android:layout_width="63dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="09:00"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="63dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="16:00"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.646"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <TextView
+            android:id="@+id/ioimall"
+            android:layout_width="198dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/poppins_light"
+            android:text="Putrajaya - IOI City Mall"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.099"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/alamandatime"
@@ -217,59 +258,93 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737"
+        app:layout_constraintVertical_bias="0.59"
         app:srcCompat="@drawable/squarebox" />
 
-    <TextView
-        android:id="@+id/alamanda"
-        android:layout_width="198dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="388dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins_light"
-        android:text="Putrajaya - Alamanda"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="53dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="353dp"
+        android:layout_height="97dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ioimalltime"
+        app:layout_constraintVertical_bias="0.068">
 
-    <ToggleButton
-        android:id="@+id/sembilan2"
-        android:layout_width="66dp"
-        android:layout_height="32dp"
-        android:background="@drawable/squarebox"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="onCustomToggleClick"
-        android:textColor="@color/white"
-        android:textOff="09:00"
-        android:textOn="09:00"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="422dp" />
+        <RadioButton
+            android:id="@+id/radioButton14"
+            android:layout_width="63dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="12:00"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.365"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.647" />
 
-    <ToggleButton
-        android:id="@+id/duabelas2"
-        android:layout_width="66dp"
-        android:layout_height="32dp"
-        android:background="@drawable/squarebox"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="onCustomToggleClick"
-        android:textColor="@color/white"
-        android:textOff="12:00"
-        android:textOn="12:00"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="421dp" />
+        <RadioButton
+            android:id="@+id/radioButton12"
+            android:layout_width="63dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="09:00"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.647" />
 
-    <ToggleButton
-        android:id="@+id/enambelas2"
-        android:layout_width="66dp"
-        android:layout_height="32dp"
-        android:background="@drawable/squarebox"
-        android:fontFamily="@font/poppins_light"
-        android:onClick="onCustomToggleClick"
-        android:textColor="@color/white"
-        android:textOff="16:00"
-        android:textOn="16:00"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="421dp" />
+        <RadioButton
+            android:id="@+id/radioButton13"
+            android:layout_width="63dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="16:00"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.662"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.647" />
+
+        <TextView
+            android:id="@+id/alamanda"
+            android:layout_width="198dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/poppins_light"
+            android:text="Putrajaya - Alamanda"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.122"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/toseatpage"
@@ -280,8 +355,10 @@
         android:text="SELECT SEAT"
         android:textColor="@color/navyblue"
         app:cornerRadius="10px"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="530dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alamandatime" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
