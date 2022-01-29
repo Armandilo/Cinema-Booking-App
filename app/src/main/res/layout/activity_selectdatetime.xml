@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".selectdatetime"
+    android:background = "@color/navyblue">
+
+    <TextView
+        android:id="@+id/datentime"
+        android:layout_width="198dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="28dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_light"
+        android:text="SELECT DATE AND TIME"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="38dp" />
+
+    <HorizontalScrollView
+        android:layout_width="410dp"
+        android:layout_height="101dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="110dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/date1"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="19 Nov"
+                android:textOn="19 Nov"
+                android:layout_marginLeft="10dp"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+            <ToggleButton
+                android:id="@+id/date2"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="20 Nov"
+                android:textOn="20 Nov"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+            <ToggleButton
+                android:id="@+id/date3"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="21 Nov"
+                android:textOn="21 Nov"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+            <ToggleButton
+                android:id="@+id/date4"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="22 Nov"
+                android:textOn="22 Now"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+            <ToggleButton
+                android:id="@+id/date5"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="23 Nov"
+                android:textOn="23 Nov"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+            <ToggleButton
+                android:id="@+id/date6"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="24 Nov"
+                android:textOn="24 Nov"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+            <ToggleButton
+                android:id="@+id/date7"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="25 Nov"
+                android:textOn="25 Nov"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+            <ToggleButton
+                android:id="@+id/date8"
+                android:layout_width="61dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/squarebox"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="onCustomToggleClick"
+                android:textColor="@color/white"
+                android:textOff="26 Nov"
+                android:textOn="26 Nov"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="329dp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/ioimalltime"
+        android:layout_width="353dp"
+        android:layout_height="97dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/squarebox" />
+
+    <TextView
+        android:id="@+id/ioimall"
+        android:layout_width="198dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="268dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_light"
+        android:text="Putrajaya - IOI City Mall"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="53dp" />
+
+    <ToggleButton
+        android:id="@+id/sembilan"
+        android:layout_width="66dp"
+        android:layout_height="32dp"
+        android:background="@drawable/squarebox"
+        android:fontFamily="@font/poppins_light"
+        android:onClick="onCustomToggleClick"
+        android:textColor="@color/white"
+        android:textOff="09:00"
+        android:textOn="09:00"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="301dp" />
+
+    <ToggleButton
+        android:id="@+id/duabelas"
+        android:layout_width="66dp"
+        android:layout_height="32dp"
+        android:background="@drawable/squarebox"
+        android:fontFamily="@font/poppins_light"
+        android:onClick="onCustomToggleClick"
+        android:textColor="@color/white"
+        android:textOff="12:00"
+        android:textOn="12:00"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="301dp" />
+
+    <ToggleButton
+        android:id="@+id/enambelas"
+        android:layout_width="66dp"
+        android:layout_height="32dp"
+        android:background="@drawable/squarebox"
+        android:fontFamily="@font/poppins_light"
+        android:onClick="onCustomToggleClick"
+        android:textColor="@color/white"
+        android:textOff="16:00"
+        android:textOn="16:00"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="301dp" />
+
+    <ImageView
+        android:id="@+id/alamandatime"
+        android:layout_width="353dp"
+        android:layout_height="97dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.737"
+        app:srcCompat="@drawable/squarebox" />
+
+    <TextView
+        android:id="@+id/alamanda"
+        android:layout_width="198dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="388dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_light"
+        android:text="Putrajaya - Alamanda"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="53dp" />
+
+    <ToggleButton
+        android:id="@+id/sembilan2"
+        android:layout_width="66dp"
+        android:layout_height="32dp"
+        android:background="@drawable/squarebox"
+        android:fontFamily="@font/poppins_light"
+        android:onClick="onCustomToggleClick"
+        android:textColor="@color/white"
+        android:textOff="09:00"
+        android:textOn="09:00"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+    <ToggleButton
+        android:id="@+id/duabelas2"
+        android:layout_width="66dp"
+        android:layout_height="32dp"
+        android:background="@drawable/squarebox"
+        android:fontFamily="@font/poppins_light"
+        android:onClick="onCustomToggleClick"
+        android:textColor="@color/white"
+        android:textOff="12:00"
+        android:textOn="12:00"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="421dp" />
+
+    <ToggleButton
+        android:id="@+id/enambelas2"
+        android:layout_width="66dp"
+        android:layout_height="32dp"
+        android:background="@drawable/squarebox"
+        android:fontFamily="@font/poppins_light"
+        android:onClick="onCustomToggleClick"
+        android:textColor="@color/white"
+        android:textOff="16:00"
+        android:textOn="16:00"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="421dp" />
+
+    <Button
+        android:id="@+id/toseatpage"
+        android:layout_width="131dp"
+        android:layout_height="39dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/poppins_light"
+        android:text="SELECT SEAT"
+        android:textColor="@color/navyblue"
+        app:cornerRadius="10px"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="530dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

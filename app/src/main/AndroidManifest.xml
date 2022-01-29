@@ -16,6 +16,9 @@
             android:name=".BookingDetails"
             android:exported="false" />
         <activity
+            android:name=".selectdatetime"
+            android:exported="false" />
+        <activity
             android:name=".TicketDetails"
             android:exported="false" />
         <activity
