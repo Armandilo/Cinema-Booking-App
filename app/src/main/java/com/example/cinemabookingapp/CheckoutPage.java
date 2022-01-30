@@ -23,16 +23,13 @@ public class CheckoutPage extends AppCompatActivity {
     Button pay;
     AlertDialog.Builder alertBuilder, alertBuilder2;
     private CheckBox payCash, payDebitCard;
-    public String paymentMode=null, paymentStatus=null; // movieName="Eternals", movieDate="20 NOV";//You should convert movieName to movieDate to get Intent
-    public String movieName = getIntent().getStringExtra("movieName");
-    public String movieDate = getIntent().getStringExtra("chosenDate");
+    public String paymentMode=null, paymentStatus=null, movieName="Eternals", movieDate="20 NOV";//You should convert movieName to movieDate to get Intent
     //Get intent from BookingDetails for movieName, movieDate (for now, I included dummy data for this)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_page);
-
 
         //Check box
         payCash = findViewById(R.id.checkBox2);
@@ -79,6 +76,8 @@ public class CheckoutPage extends AppCompatActivity {
                                     //Get and send payment mode and status
                                     paymentMode = "Cash";
                                     paymentStatus = "Pending";
+                                    movieName = "Eternals"; //Change this to the data from previous activity
+                                    movieDate = "20 NOV"; //This too
                                     intent.putExtra("paymentMode", paymentMode);
                                     intent.putExtra("paymentStatus", paymentStatus);
                                     intent.putExtra("movieName",movieName);
@@ -148,6 +147,8 @@ public class CheckoutPage extends AppCompatActivity {
                                         //Get and send payment mode and status
                                         paymentMode = "Debit Card";
                                         paymentStatus = "Successful";
+                                        movieName = "Eternals"; //Change this to the data from previous activity
+                                        movieDate = "20 NOV"; //This too
                                         intent.putExtra("paymentMode", paymentMode);
                                         intent.putExtra("paymentStatus", paymentStatus);
                                         intent.putExtra("movieName",movieName);
