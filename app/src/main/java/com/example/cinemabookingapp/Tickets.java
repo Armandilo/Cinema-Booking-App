@@ -39,10 +39,7 @@ public class Tickets extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayout;
     DatabaseReference ticketRef;
-    ListView listView;
     ScrollView scrollView;
-    ArrayList<String> listItems;
-    ArrayAdapter<String> adapter;
     ArrayList<Item> currentTicket;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +50,6 @@ public class Tickets extends AppCompatActivity {
             this.getSupportActionBar().hide();
         }
         catch(NullPointerException e){}
-
-
-
-        //Get intent from CheckoutPage.class
 
         //Get name of movie
 
@@ -100,11 +93,9 @@ public class Tickets extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), UserProfilePage.class));
                     overridePendingTransition(0,0);
                     return true;
-
             }
             return false;
         });
-        listView = findViewById(R.id.listView);
         scrollView = findViewById(R.id.scroll);
         currentTicket = new ArrayList<Item>();
         bottomNavigationView.setSelectedItemId(R.id.nav_tickets);
@@ -148,54 +139,8 @@ public class Tickets extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-        listItems = new ArrayList<>();
-        //Dummy Data
-        listItems.add("Shang-Chi" + "\n" + "20 NOV\n" +"Payment Method: Cash\n"+"Status: Pending");
-
-        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item_row, listItems );
-        listView.setAdapter(adapter);
-
-        //ListView inside ScrollView
-        listView.setOnTouchListener(new ListView.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event){
-                int action = event.getAction();
-                switch (action){
-                    case MotionEvent.ACTION_DOWN:
-                        //Disable ScrollView to intercept touch events
-                        v.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
-
-                    case MotionEvent.ACTION_UP:
-                        //Allow ScrollView to intercept touch events
-                        v.getParent().requestDisallowInterceptTouchEvent(false);
-                        break;
-                }
-                //Handle ListView touch events
-                v.onTouchEvent(event);
-                return true;
-            }
-        });
-
-        //Add items to list dynamically
-      //  if(!movieName.isEmpty() && !chosenDate.isEmpty() && !paymentMethod.isEmpty() && !paymentStatus.isEmpty()){
-       //     addItem(movieName + "\n" + chosenDate + "\nPayment Method: " + paymentMethod
-        //            + "\nStatus: " + paymentStatus);
-      //  }
-
     }
 
 
-        public void addItem(String item){
-            listItems.add(item);
-            listView.setAdapter(adapter);
-    }
 
 }
