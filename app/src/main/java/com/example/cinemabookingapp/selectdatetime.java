@@ -9,11 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class selectdatetime extends AppCompatActivity {
 
-    private RadioButton rb1 , rb2, rb3, rb4, rb5, rb6, rb7, rb8,rb9,rb10,rb11,rb12,rb13,rb14;
+
     private Button button;
 
     AlertDialog.Builder builder;
@@ -22,96 +23,59 @@ public class selectdatetime extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selectdatetime);
 
+        try{
+            this.getSupportActionBar().hide();
+        }
+        catch(NullPointerException e){}
+
         String moviename = getIntent().getStringExtra("moviename");
 
-        String chosenDate;
-        String chosenTime;
+        final String[] movieTime = new String[1];
+        final String[] CinemaLocation = new String[1];
 
-        rb1 = (RadioButton) findViewById(R.id.radioButton);
-        rb2 = (RadioButton) findViewById(R.id.radioButton2);
-        rb3 = (RadioButton) findViewById(R.id.radioButton3);
-        rb4 = (RadioButton) findViewById(R.id.radioButton4);
-        rb5 = (RadioButton) findViewById(R.id.radioButton5);
-        rb6 = (RadioButton) findViewById(R.id.radioButton6);
-        rb7 = (RadioButton) findViewById(R.id.radioButton7);
-        rb8 = (RadioButton) findViewById(R.id.radioButton8);
 
-        if(rb1.isChecked())
-            chosenDate = "11 NOV";
-        else if(rb2.isChecked())
-            chosenDate = "12 NOV";
-        else if(rb3.isChecked())
-            chosenDate = "13 NOV";
-        else if(rb4.isChecked())
-            chosenDate = "14 NOV";
-        else if(rb5.isChecked())
-            chosenDate = "15 NOV";
-        else if(rb6.isChecked())
-            chosenDate = "16 NOV";
-        else if(rb7.isChecked())
-            chosenDate = "17 NOV";
-        else if(rb8.isChecked())
-            chosenDate = "18 NOV";
-        else
-            chosenDate = "null";
 
-        rb9 = (RadioButton) findViewById(R.id.radioButton10);
-        rb10 = (RadioButton) findViewById(R.id.radioButton9);
-        rb11 = (RadioButton) findViewById(R.id.radioButton11);
-        rb12 = (RadioButton) findViewById(R.id.radioButton12);
-        rb13 = (RadioButton) findViewById(R.id.radioButton14);
-        rb14 = (RadioButton) findViewById(R.id.radioButton13);
 
-        String chosenPlace = "null";
-        if(rb9.isChecked())
-        {
-            chosenTime = "09:00";
-            chosenPlace = "Putrajaya - IOI City Mall";
-        }
-        else if(rb10.isChecked())
-        {
-            chosenTime = "12:00";
-            chosenPlace = "Putrajaya - IOI City Mall";
-        }
-        else if(rb11.isChecked())
-        {
-            chosenTime = "16:00";
-            chosenPlace = "Putrajaya - IOI City Mall";
-        }
-        else if(rb12.isChecked())
-        {
-            chosenTime = "09:00";
-            chosenPlace = "Putrajaya - Alamanda";
-        }
-        else if(rb13.isChecked())
-        {
-            chosenTime = "12:00";
-            chosenPlace = "Putrajaya - Alamanda";
-        }
-        else if(rb14.isChecked())
-        {
-            chosenTime = "16:00";
-            chosenPlace = "Putrajaya - Alamanda";
-        }
-        else
-            chosenTime = "null";
 
         button = (Button) findViewById(R.id.toseatpage);
-        String finalChosenPlace = chosenPlace;
+
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                OpenSelectSeat(moviename,chosenDate,chosenTime, finalChosenPlace);
+                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup1);
+                int radioButtonID = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioButtonID);
+                String movieDate = (String) radioButton.getText();
+
+                RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.radiogroup2);
+                int radioButtonID2 = radioGroup1.getCheckedRadioButtonId();
+                if(radioButtonID2 == -1)
+                {
+                    RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.radiogroup3);
+                    int radioButtonID3 = radioGroup2.getCheckedRadioButtonId();
+                    RadioButton radioButton3 = (RadioButton) radioGroup2.findViewById(radioButtonID3);
+                    movieTime[0] = (String) radioButton3.getText();
+                    CinemaLocation[0] = (String) radioButton3.getContentDescription();
+
+                }
+                else
+                {
+                    RadioButton radioButton2 = (RadioButton) radioGroup1.findViewById(radioButtonID2);
+                    movieTime[0] = (String) radioButton2.getText();
+                    CinemaLocation[0] = (String) radioButton2.getContentDescription();
+
+                }
+                OpenSelectSeat(moviename,movieDate, movieTime[0], CinemaLocation[0]);
             }
         });
 
 
     }
 
-    public void OpenSelectSeat(String moviename, String chosenDate,String chosenTime, String chosenPlace){
+    public void OpenSelectSeat(String moviename, String movieDate,String movieTime, String CinemaLocation){
         Intent intent = new Intent(this, selectseat.class);
 
-        if(chosenDate == "null" || chosenTime == "null")
+        if(movieDate == null || movieTime == null)
         {
             builder = new AlertDialog.Builder(this);
             builder.setTitle("Error")
@@ -127,9 +91,9 @@ public class selectdatetime extends AppCompatActivity {
         else
         {
             intent.putExtra("moviename", moviename);
-            intent.putExtra("chosenDate",chosenDate);
-            intent.putExtra("chosenTime",chosenTime);
-            intent.putExtra("chosenPlace",chosenPlace);
+            intent.putExtra("chosenDate",movieDate);
+            intent.putExtra("chosenTime",movieTime);
+            intent.putExtra("chosenPlace",CinemaLocation);
             startActivity(intent);
         }
 

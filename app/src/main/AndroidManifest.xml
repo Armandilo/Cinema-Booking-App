@@ -19,6 +19,11 @@
             android:name=".selectdatetime"
             android:exported="false" />
         <activity
+            android:name=".selectseat"
+            android:exported="false"
+             />
+
+        <activity
             android:name=".TicketDetails"
             android:exported="false" />
         <activity
@@ -38,7 +43,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -26,33 +28,39 @@ public class BookingDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_details);
 
-        /*/Get intent from previous activity
+        //Get intent from previous activity
         //Get number of tickets
-        Intent k = getIntent();
-        Integer ticketNum = k.getIntExtra("ticketNum", 1);
+        Intent callerIntent = getIntent();
+        Bundle packagefromcaller = callerIntent.getBundleExtra("mypackage");
+        String chosenTime = packagefromcaller.getString("chosenTime");
+        String chosenSeat = getIntent().getStringExtra("chosenSeat");
+        Integer ticketNum = getIntent().getIntExtra("quantitySeat", 1);
+        String chosenDate = getIntent().getStringExtra("chosenDate");
 
-        //Get name of movie
-        Intent i = getIntent();
-        String movieName = i.getStringExtra("movieName");
+        String movieName = getIntent().getStringExtra("moviename");
 
         //Get time of movie
-        Intent j = getIntent();
-        String movieTime = j.getStringExtra("movieTime");
 
-        //Get date of movie
-        Intent l = getIntent();
-        String movieDate = l.getStringExtra("movieDate");
+
+        String CinemaLocation = getIntent().getStringExtra("chosenPlace");
+
+
 
         //Set name of movie in activity
         ((TextView)findViewById(R.id.movieNameDisplay)).setText(movieName);
 
         //Set time of movie in activity
-        ((TextView)findViewById(R.id.movieTimeDisplay)).setText(movieTime);*/
+        ((TextView)findViewById(R.id.movieTimeDisplay)).setText(chosenTime);
+
+        //Set Location of Cinema in Activity
+        ((TextView)findViewById(R.id.CinemaLocation)).setText(CinemaLocation);
+        ((TextView)findViewById(R.id.quantity)).setText(String.valueOf(ticketNum));
 
         //Promo Code
         EditText promoCode = (EditText) findViewById(R.id.promoCode);
         redeemPromoCode = (Button) findViewById(R.id.button4);
 
+        ((TextView)findViewById(R.id.promoPrice)).setText("- RM0.00");
         //Click Redeem button
         redeemPromoCode.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -73,12 +81,12 @@ public class BookingDetails extends AppCompatActivity {
         });
 
 
-        /*/Total Price
+        //Total Price
         Double totalPrice = 0.0;
-        totalPrice = (Double.valueOf(ticketNum) * 14) + priceDeducted;
+        totalPrice = (ticketNum * 14) - priceDeducted;
         BigDecimal bd = new BigDecimal(totalPrice).setScale(2, RoundingMode.HALF_UP);
         double newTotalPrice = bd.doubleValue();
-        ((TextView)findViewById(R.id.totalPrice)).setText("RM" + newTotalPrice);
+        ((TextView)findViewById(R.id.totalPrice)).setText("RM" + String.valueOf(newTotalPrice));
 
         //Set button to checkout page*/
         buttoncheckoutpage = (Button) findViewById(R.id.button6);
@@ -99,14 +107,19 @@ public class BookingDetails extends AppCompatActivity {
 
         buttoncheckoutpage.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) { OpenCheckoutPage(); }
+            public void onClick(View v) { OpenCheckoutPage(movieName,chosenTime,chosenSeat,CinemaLocation,chosenDate); }
         });
 
     }
 
     //Open checkout page when button is clicked
-    public void OpenCheckoutPage(){
+    public void OpenCheckoutPage(String movieName,String chosenTime, String chosenSeat, String CinemaLocation,String chosenDate){
         Intent intent = new Intent(this,CheckoutPage.class);
+        intent.putExtra("movieName", movieName);
+        intent.putExtra("chosenTime", chosenTime);
+        intent.putExtra("chosenSeat", chosenSeat);
+        intent.putExtra("CinemaLocation", CinemaLocation);
+        intent.putExtra("chosenDate", chosenDate);
         startActivity(intent);
     }
 }

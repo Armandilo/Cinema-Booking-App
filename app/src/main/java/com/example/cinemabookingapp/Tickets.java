@@ -50,20 +50,20 @@ public class Tickets extends AppCompatActivity {
         //Get intent from CheckoutPage.class
 
         //Get name of movie
-        Intent i = getIntent();
-        String movieName = i.getStringExtra("movieName");
+
+        String movieName = getIntent().getStringExtra("movieName");
 
         //Get time of movie
-        Intent j = getIntent();
-        String movieDate = j.getStringExtra("movieDate");
+
+        String movieDate = getIntent().getStringExtra("movieDate");
 
         //Get payment method
-        Intent k = getIntent();
-        String paymentMethod = k.getStringExtra("paymentMode");
+
+        String paymentMethod = getIntent().getStringExtra("paymentMode");
 
         //Get payment status
-        Intent l = getIntent();
-        String paymentStatus = l.getStringExtra("paymentStatus");
+
+        String paymentStatus = getIntent().getStringExtra("paymentStatus");
 
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);

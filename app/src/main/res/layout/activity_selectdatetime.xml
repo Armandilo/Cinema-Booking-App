@@ -38,118 +38,126 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_marginLeft = "9dp"
+            <RadioGroup
+                android:id="@+id/radiogroup1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="11 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="12 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="11 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
 
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="13 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="12 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
 
-            <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="14 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="13 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
 
-            <RadioButton
-                android:id="@+id/radioButton5"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="15 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="14 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
 
-            <RadioButton
-                android:id="@+id/radioButton6"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="16 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="15 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
 
-            <RadioButton
-                android:id="@+id/radioButton7"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="17 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="16 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
 
-            <RadioButton
-                android:id="@+id/radioButton8"
-                android:layout_width="67dp"
-                android:layout_height="81dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:elevation="4dp"
-                android:fontFamily="@font/poppins_light"
-                android:text="18 NOV"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="17 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="67dp"
+                    android:layout_height="81dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="18 NOV"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -159,6 +167,7 @@
         android:id="@+id/ioimalltime"
         android:layout_width="353dp"
         android:layout_height="97dp"
+        android:layout_marginBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,68 +179,69 @@
         android:id="@+id/constraintLayout5"
         android:layout_width="349dp"
         android:layout_height="95dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
 
 
-        <RadioButton
-            android:id="@+id/radioButton9"
-            android:layout_width="63dp"
-            android:layout_height="29dp"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:elevation="4dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="12:00"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
+        <RadioGroup
+            android:id="@+id/radiogroup2"
+            android:layout_width="333dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.342"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.666" />
+            app:layout_constraintTop_toBottomOf="@+id/ioimall">
 
-        <RadioButton
-            android:id="@+id/radioButton10"
-            android:layout_width="63dp"
-            android:layout_height="29dp"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:elevation="4dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="09:00"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.055"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.666" />
+            <RadioButton
+                android:id="@+id/radioButton9"
+                android:layout_width="63dp"
+                android:layout_height="29dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:contentDescription="Putrajaya - IOI City Mall"
+                android:elevation="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="12:00"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-        <RadioButton
-            android:id="@+id/radioButton11"
-            android:layout_width="63dp"
-            android:layout_height="29dp"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:elevation="4dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="16:00"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.646"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.666" />
+            <RadioButton
+                android:id="@+id/radioButton10"
+                android:layout_width="63dp"
+                android:layout_height="29dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:contentDescription="Putrajaya - IOI City Mall"
+                android:elevation="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="09:00"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/radioButton11"
+                android:layout_width="63dp"
+                android:layout_height="29dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:contentDescription="Putrajaya - IOI City Mall"
+                android:elevation="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="16:00"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/ioimall"
@@ -254,6 +264,7 @@
         android:id="@+id/alamandatime"
         android:layout_width="353dp"
         android:layout_height="97dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -272,62 +283,65 @@
         app:layout_constraintTop_toBottomOf="@+id/ioimalltime"
         app:layout_constraintVertical_bias="0.068">
 
-        <RadioButton
-            android:id="@+id/radioButton14"
-            android:layout_width="63dp"
-            android:layout_height="29dp"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:elevation="4dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="12:00"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
+        <RadioGroup
+            android:id="@+id/radiogroup3"
+            android:layout_width="332dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="7dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.365"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.647" />
+            app:layout_constraintTop_toBottomOf="@+id/alamanda">
 
-        <RadioButton
-            android:id="@+id/radioButton12"
-            android:layout_width="63dp"
-            android:layout_height="29dp"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:elevation="4dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="09:00"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.065"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.647" />
+            <RadioButton
+                android:id="@+id/radioButton14"
+                android:layout_width="63dp"
+                android:layout_height="29dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:contentDescription="Putrajaya - Alamanda"
+                android:elevation="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="12:00"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-        <RadioButton
-            android:id="@+id/radioButton13"
-            android:layout_width="63dp"
-            android:layout_height="29dp"
-            android:layout_weight="1"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:elevation="4dp"
-            android:fontFamily="@font/poppins_light"
-            android:text="16:00"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.662"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.647" />
+            <RadioButton
+                android:id="@+id/radioButton12"
+                android:layout_width="63dp"
+                android:layout_height="29dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:contentDescription="Putrajaya - Alamanda"
+                android:elevation="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="09:00"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/radioButton13"
+                android:layout_width="63dp"
+                android:layout_height="29dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:contentDescription="Putrajaya - Alamanda"
+                android:elevation="4dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="16:00"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/alamanda"
