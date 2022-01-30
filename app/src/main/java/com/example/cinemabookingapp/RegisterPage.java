@@ -1,14 +1,24 @@
 package com.example.cinemabookingapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.regex.Pattern;
 
@@ -23,10 +33,12 @@ public class RegisterPage extends AppCompatActivity {
                                                                 ")+"
                                             );
 
-    private TextInputLayout regUsername;
-    private TextInputLayout regEmail;
-    private TextInputLayout regPassword;
-    private TextInputLayout regConfirmPassword;
+    private TextInputEditText regUsername;
+    private TextInputEditText regEmail;
+    private TextInputEditText regPassword;
+    private TextInputEditText regConfirmPassword;
+    FirebaseAuth mAuth;
+    Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,87 +50,51 @@ public class RegisterPage extends AppCompatActivity {
         }
         catch(NullPointerException e){}
 
-        regUsername = findViewById(R.id.textInputLayout3);
-        regEmail = findViewById(R.id.textInputLayout7);
-        regPassword = findViewById(R.id.textInputLayout2);
-        regConfirmPassword = findViewById(R.id.textInputLayout4);
+        regUsername = findViewById(R.id.regUsername);
+        regEmail = findViewById(R.id.regEmail);
+        regPassword = findViewById(R.id.regPassword);
+        regConfirmPassword = findViewById(R.id.regConfirmPassword);
+        mAuth = FirebaseAuth.getInstance();
+        register = (Button) findViewById(R.id.button3);
+
+        register.setOnClickListener(view ->
+        {
+            createUser();
+        });
+
+
     }
 
-    //Input validation for username
-    private Boolean validateUsername(){
-        String usernameInput = regUsername.getEditText().getText().toString().trim();
+    private void createUser(){
+        String email = regEmail.getText().toString();
+        String password = regPassword.getText().toString();
+        String username = regUsername.getText().toString();
 
-        if (usernameInput.isEmpty()){
-            regUsername.setError("Field cannot be empty");
-            return false;
-        }else if (usernameInput.length() > 10){
-            regUsername.setError("Username too long");
-            return false;
+        if (TextUtils.isEmpty(email)){
+            regEmail.setError("Email cannot be empty");
+            regEmail.requestFocus();
+        }else if (TextUtils.isEmpty(password)){
+            regPassword.setError("Password cannot be empty");
+            regPassword.requestFocus();
         }else{
-            regUsername.setError(null);
-            regUsername.setErrorEnabled(false);
-            return true;
+            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(username).build();
+
+                        user.updateProfile(profileUpdates);
+                        startActivity(new Intent(RegisterPage.this, LoginPage.class));
+                    }else{
+                        Toast.makeText(RegisterPage.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
     }
 
-    //Input validation for email
-    private Boolean validateEmail(){
-        String emailInput = regEmail.getEditText().getText().toString().trim();
 
-        if (emailInput.isEmpty()){
-            regEmail.setError("Field cannot be empty");
-            return false;
-        }else if(!EMAIL_ADDRESS.matcher(emailInput).matches()){
-            regEmail.setError("Please enter a valid email address.");
-            return false;
-        }
-        else{
-            regEmail.setError(null);
-            regEmail.setErrorEnabled(false);
-            return true;
-        }
-
-    }
-
-    //Input validation for password
-    private Boolean validatePassword(){
-        String passwordInput = regPassword.getEditText().getText().toString().trim();
-
-        if (passwordInput.isEmpty()){
-            regPassword.setError("Field cannot be empty");
-            return false;
-        }
-        else{
-            regPassword.setError(null);
-            regPassword.setErrorEnabled(false);
-            return true;
-        }
-
-    }
-
-    //Input validation for password confirmation
-    private Boolean validateConfirmPassword(){
-        String passwordConfirmInput = regConfirmPassword.getEditText().getText().toString().trim();
-
-        if (passwordConfirmInput.isEmpty()){
-            regConfirmPassword.setError("Field cannot be empty");
-            return false;
-        }else if (!passwordConfirmInput.equals(regPassword.getEditText().getText().toString().trim())){
-            regConfirmPassword.setError("Password does not match");
-            return false;
-        }else{
-            regPassword.setError(null);
-            regPassword.setErrorEnabled(false);
-            return true;
-        }
-    }
-
-    //Confirm all input
-    public void confirmInput(View v){
-        if (!validateUsername() | !validateEmail() | !validatePassword() | !validateConfirmPassword() ){
-            return;
-        }
-
-        Toast.makeText(this, "Registration successful, please login.", Toast.LENGTH_SHORT).show();
-    }
 }

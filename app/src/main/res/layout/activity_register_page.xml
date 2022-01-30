@@ -255,7 +255,6 @@
             android:layout_height="61dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="#5769D0"
-            android:onClick="confirmInput"
             android:text="Create Account"
             android:textAllCaps="false"
             app:cornerRadius="35px"

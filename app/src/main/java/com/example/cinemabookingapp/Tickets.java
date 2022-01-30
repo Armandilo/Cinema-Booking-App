@@ -96,6 +96,11 @@ public class Tickets extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), HomePage.class));
                     overridePendingTransition(0,0);
                     return true;
+                case R.id.nav_profile:
+                    startActivity(new Intent(getApplicationContext(), UserProfilePage.class));
+                    overridePendingTransition(0,0);
+                    return true;
+
             }
             return false;
         });

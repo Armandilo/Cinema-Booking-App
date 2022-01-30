@@ -95,14 +95,14 @@
             app:boxBackgroundMode="filled"
             app:boxStrokeColor="@color/black"
             app:counterEnabled="true"
-            app:counterMaxLength="10"
+            app:counterMaxLength="30"
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/usernameInput"
+                android:id="@+id/emailInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -121,6 +121,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -159,7 +160,7 @@
             android:layout_width="239dp"
             android:layout_height="61dp"
             android:backgroundTint="#5769D0"
-            android:onClick="OpenHomePage"
+           
             android:text="Login"
             android:textAllCaps="false"
             app:cornerRadius="35px"

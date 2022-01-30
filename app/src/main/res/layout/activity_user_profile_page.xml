@@ -25,13 +25,13 @@
             android:layout_width="88dp"
             android:layout_height="81dp"
             android:layout_centerVertical="true"
-            android:alpha="0.3"
+            android:layout_marginBottom="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintHorizontal_bias="0.121"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.011"
+            app:layout_constraintVertical_bias="0.454"
             app:srcCompat="@drawable/user" />
 
         <TextView
@@ -39,8 +39,7 @@
             android:layout_width="139dp"
             android:layout_height="24dp"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="88dp"
-            android:layout_marginBottom="84dp"
+            android:layout_marginBottom="44dp"
             android:layout_toRightOf="@+id/imageView"
             android:fontFamily="@font/poppins_bold"
             android:includeFontPadding="false"
@@ -48,22 +47,25 @@
             android:textColor="#000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.605"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/username_field"
-            android:layout_width="106dp"
-            android:layout_height="0dp"
+            android:layout_width="251dp"
+            android:layout_height="24dp"
             android:layout_below="@id/fullname_field"
-            android:layout_marginEnd="116dp"
-            android:layout_marginBottom="112dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginBottom="56dp"
             android:layout_toRightOf="@+id/imageView"
             android:includeFontPadding="false"
             android:text="behjat_riyaz"
             android:textColor="#000"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -83,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:hint="Full Name"
+            android:hint="Username"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,10 +93,13 @@
             app:layout_constraintVertical_bias="0.009">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_round_user"
                 android:drawablePadding="10dp"
+                android:duplicateParentState="false"
+                android:editable="false"
                 android:text="Behjat Riyaz" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -112,10 +117,12 @@
             app:layout_constraintVertical_bias=".250">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_email"
                 android:drawablePadding="10dp"
+                android:editable="false"
                 android:text="behjatriyaz@gmail.com" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -125,29 +132,14 @@
             android:layout_width="311dp"
             android:layout_height="67dp"
             android:backgroundTint="#5769D0"
-            android:text="LogOut"
+            android:text="Log Out"
             android:textAllCaps="false"
             app:cornerRadius="35px"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.50" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="311dp"
-            android:layout_height="67dp"
-            android:backgroundTint="#5769D0"
-            android:text="Edit Profile"
-            android:textAllCaps="false"
-            app:cornerRadius="35px"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.742" />
+            app:layout_constraintVertical_bias="0.568" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"

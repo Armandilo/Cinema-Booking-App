@@ -27,6 +27,9 @@
             android:name=".TicketDetails"
             android:exported="false" />
         <activity
+            android:name=".UserProfilePage"
+            android:exported="false" />
+        <activity
             android:name=".MovieDetails"
             android:exported="false" />
         <activity

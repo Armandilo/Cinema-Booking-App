@@ -17,6 +17,8 @@ import com.example.cinemabookingapp.adapter.CurrentMoviesAdapter;
 import com.example.cinemabookingapp.adapter.PromosAdapter;
 import com.example.cinemabookingapp.adapter.UpcomingMoviesAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +27,16 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
 
     private RecyclerView movieRecyclerView, promoRecyclerView, upcomingMovieRecyclerView;
 
+    public FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    public String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
         //Get username
-        Intent i = getIntent();
-        String username = i.getStringExtra("username");
+        username = user.getDisplayName();
 
         ((TextView)findViewById(R.id.username_display)).setText(username); //Display username
 
@@ -69,6 +73,10 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
                     return true;
                 case R.id.nav_tickets:
                     startActivity(new Intent(getApplicationContext(),Tickets.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.nav_profile:
+                    startActivity(new Intent(getApplicationContext(),UserProfilePage.class));
                     overridePendingTransition(0,0);
                     return true;
             }
