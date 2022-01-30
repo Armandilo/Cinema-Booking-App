@@ -37,7 +37,7 @@ public class CheckoutPage extends AppCompatActivity {
         catch(NullPointerException e){}
 
         String movieName = getIntent().getStringExtra("movieName");
-        String chosenTime = getIntent().getStringExtra("choseTime");
+        String chosenTime = getIntent().getStringExtra("chosenTime");
         String chosenSeat = getIntent().getStringExtra("chosenSeat");
         String CinemaLocation = getIntent().getStringExtra("CinemaLocation");
         String chosenDate = getIntent().getStringExtra("chosenDate");
