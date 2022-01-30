@@ -36,6 +36,7 @@ public class BookingDetails extends AppCompatActivity {
         String chosenSeat = getIntent().getStringExtra("chosenSeat");
         Integer ticketNum = getIntent().getIntExtra("quantitySeat", 1);
         String chosenDate = getIntent().getStringExtra("chosenDate");
+        String hall = getIntent().getStringExtra("hall");
 
         String movieName = getIntent().getStringExtra("moviename");
 
@@ -107,19 +108,20 @@ public class BookingDetails extends AppCompatActivity {
 
         buttoncheckoutpage.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) { OpenCheckoutPage(movieName,chosenTime,chosenSeat,CinemaLocation,chosenDate); }
+            public void onClick(View v) { OpenCheckoutPage(movieName,chosenTime,chosenSeat,CinemaLocation,chosenDate,hall); }
         });
 
     }
 
     //Open checkout page when button is clicked
-    public void OpenCheckoutPage(String movieName,String chosenTime, String chosenSeat, String CinemaLocation,String chosenDate){
+    public void OpenCheckoutPage(String movieName,String chosenTime, String chosenSeat, String CinemaLocation,String chosenDate,String hall){
         Intent intent = new Intent(this,CheckoutPage.class);
         intent.putExtra("movieName", movieName);
         intent.putExtra("chosenTime", chosenTime);
         intent.putExtra("chosenSeat", chosenSeat);
         intent.putExtra("CinemaLocation", CinemaLocation);
         intent.putExtra("chosenDate", chosenDate);
+        intent.putExtra("hall",hall);
         startActivity(intent);
     }
 }

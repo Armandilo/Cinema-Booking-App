@@ -31,6 +31,8 @@ import java.util.List;
 public class Tickets extends AppCompatActivity {
 
     private RecyclerView ticketsRecycler;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayout;
     ListView listView;
     ScrollView scrollView;
     ArrayList<String> listItems;
@@ -55,9 +57,14 @@ public class Tickets extends AppCompatActivity {
 
         //Get time of movie
 
-        String movieDate = getIntent().getStringExtra("movieDate");
+        String chosenDate = getIntent().getStringExtra("chosenDate");
+        String chosenTime = getIntent().getStringExtra("chosenTime");
+        String chosenSeat = getIntent().getStringExtra("chosenSeat");
+        String hall = getIntent().getStringExtra("hall");
+        String finalDate = chosenTime + " " + hall + " | " + chosenDate + " 2021";
 
         //Get payment method
+        String CinemaLocation = getIntent().getStringExtra("CinemaLocation");
 
         String paymentMethod = getIntent().getStringExtra("paymentMode");
 
@@ -65,25 +72,45 @@ public class Tickets extends AppCompatActivity {
 
         String paymentStatus = getIntent().getStringExtra("paymentStatus");
 
+
+
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        //Set Home Selected
+        bottomNavigationView.setSelectedItemId(R.id.nav_tickets);
+
+        //Perform ItemSelectedList
+        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+            switch(menuItem.getItemId()){
+                case R.id.nav_home:
+                    startActivity(new Intent(getApplicationContext(), HomePage.class));
+                    overridePendingTransition(0,0);
+                    return true;
+            }
+            return false;
+        });
         listView = findViewById(R.id.listView);
         scrollView = findViewById(R.id.scroll);
 
         //Set Tickets Selected
-        bottomNavigationView.setSelectedItemId(R.id.nav_tickets);
+        if(movieName != null)
+        {
+            bottomNavigationView.setSelectedItemId(R.id.nav_tickets);
+            ArrayList<Item> currentTicket = new ArrayList<Item>();
+            currentTicket.add(new Item(movieName,finalDate,CinemaLocation));
+            ticketsRecycler = findViewById(R.id.ticketsRecycler);
+            ticketsRecycler.setHasFixedSize(true);
+            mLayout = new LinearLayoutManager(this);
+            mAdapter = new TicketsAdapter(currentTicket);
+            ticketsRecycler.setLayoutManager(mLayout);
+            ticketsRecycler.setAdapter(mAdapter);
 
-        ticketsRecycler = findViewById(R.id.ticketsRecycler);
-        ticketsRecycler.setHasFixedSize(true);
-        ticketsRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        }
 
-        List<Integer> currentTicket = new ArrayList<>();
 
-        currentTicket.add(R.drawable.shangchi_ticket);
-        currentTicket.add(R.drawable.eternals_ticket);
 
-        TicketsAdapter ticketAdapter = new TicketsAdapter(currentTicket);
-        ticketsRecycler.setAdapter(ticketAdapter);
+
 
         listItems = new ArrayList<>();
         //Dummy Data
@@ -115,10 +142,10 @@ public class Tickets extends AppCompatActivity {
         });
 
         //Add items to list dynamically
-        if(!movieName.isEmpty() && !movieDate.isEmpty() && !paymentMethod.isEmpty() && !paymentStatus.isEmpty()){
-            addItem(movieName + "\n" + movieDate + "\nPayment Method: " + paymentMethod
-                    + "\nStatus: " + paymentStatus);
-        }
+      //  if(!movieName.isEmpty() && !chosenDate.isEmpty() && !paymentMethod.isEmpty() && !paymentStatus.isEmpty()){
+       //     addItem(movieName + "\n" + chosenDate + "\nPayment Method: " + paymentMethod
+        //            + "\nStatus: " + paymentStatus);
+      //  }
 
     }
 

@@ -262,7 +262,7 @@ public class selectseat extends AppCompatActivity {
                     chosenSeatFinal = chosenSeat[0].substring(0, chosenSeat[0].lastIndexOf(","));
                 }
 
-                OpenBookingDetails(moviename,chosenTime, chosenPlace, chosenSeatFinal, counter[0], chosenDate);
+                OpenBookingDetails(moviename,chosenTime, chosenPlace, chosenSeatFinal, counter[0], chosenDate,hall);
             }
         });
 
@@ -272,7 +272,7 @@ public class selectseat extends AppCompatActivity {
 
     }
 
-    public void OpenBookingDetails(String moviename, String chosenTime, String chosenPlace, String chosenSeatFinal, Integer counter, String chosenDate){
+    public void OpenBookingDetails(String moviename, String chosenTime, String chosenPlace, String chosenSeatFinal, Integer counter, String chosenDate, String hall){
         Intent intent = new Intent(this, BookingDetails.class);
 
         if(chosenSeatFinal == "" )
@@ -298,6 +298,7 @@ public class selectseat extends AppCompatActivity {
             intent.putExtra("chosenSeat", chosenSeatFinal);
             intent.putExtra("quantitySeat", counter);
             intent.putExtra("chosenDate", chosenDate);
+            intent.putExtra("hall", hall);
             startActivity(intent);
         }
 

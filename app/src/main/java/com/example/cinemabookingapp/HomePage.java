@@ -34,11 +34,7 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
         Intent i = getIntent();
         String username = i.getStringExtra("username");
 
-        if(username.isEmpty()){
-            ((TextView)findViewById(R.id.username_display)).setText("User");
-        }
-        else
-            ((TextView)findViewById(R.id.username_display)).setText(username); //Display username
+        ((TextView)findViewById(R.id.username_display)).setText(username); //Display username
 
         //Hide action bar
         try{

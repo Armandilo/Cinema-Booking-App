@@ -45,9 +45,8 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ticketsRecycler"
-                android:layout_width="384dp"
-                android:layout_height="439dp"
-                android:paddingLeft="10sp"
+                android:layout_width="390dp"
+                android:layout_height="537dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
