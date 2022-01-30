@@ -34,12 +34,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) { OpenHomePage(); }
         });*/
-        buttonuserprofile = (Button) findViewById(R.id.button4);
-        buttonuserprofile.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                OpenUserProfile(); }
-        });
+
 
         try{
             this.getSupportActionBar().hide();
@@ -101,8 +96,5 @@ public class LoginPage extends AppCompatActivity {
 
     }
 
-    public void OpenUserProfile(){
-        Intent intent = new Intent(this,EditProfile.class);
-        startActivity(intent);
-    }
+
 }

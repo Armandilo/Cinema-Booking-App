@@ -75,6 +75,10 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
                     startActivity(new Intent(getApplicationContext(),Tickets.class));
                     overridePendingTransition(0,0);
                     return true;
+                case R.id.username_display:
+                    startActivity(new Intent(getApplicationContext(), UserProfilePage.class));
+                    overridePendingTransition(0,0);
+                    return true;
             }
             return false;
         });

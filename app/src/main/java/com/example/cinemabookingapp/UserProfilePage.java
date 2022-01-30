@@ -6,28 +6,38 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class UserProfilePage extends AppCompatActivity {
-    private Button buttonchangepassword;
+    private Button buttonlogout;
     private Button buttoneditprofile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile_page);
 
+        Intent callerIntent = getIntent();
+        Bundle packagefromcaller = callerIntent.getBundleExtra("mypackage");
+        String Username = getIntent().getStringExtra("Username");
+        String Email = getIntent().getStringExtra("Email");
+
+        //Set username
+        ((TextView)findViewById(R.id.textInputLayout3)).setText(Username);
+
+        //Set email
+        ((TextView)findViewById(R.id.textInputLayout7)).setText(Email);
 
 
-
-
-
-        buttonchangepassword = (Button) findViewById(R.id.button4);
-        buttonchangepassword.setOnClickListener(new View.OnClickListener(){
+        buttonlogout = (Button) findViewById(R.id.button2);
+        buttonlogout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v)
             {
-                OpenChangePassword();
+                OpenLogin();
             }
         });
+
+
 
         buttoneditprofile = (Button) findViewById(R.id.button3);
         buttoneditprofile.setOnClickListener(new View.OnClickListener(){
@@ -43,13 +53,14 @@ public class UserProfilePage extends AppCompatActivity {
         catch(NullPointerException e){}
 
     }
-    public void OpenChangePassword(){
-        Intent intent = new Intent(this,ChangePassword.class);
-        startActivity(intent);
-    }
+
 
     public void OpenEditProfiler(){
         Intent intent = new Intent(this,EditProfile.class);
+        startActivity(intent);
+    }
+    public void OpenLogin(){
+        Intent intent = new Intent(this,LoginPage.class);
         startActivity(intent);
     }
 
