@@ -1,6 +1,7 @@
 package com.example.cinemabookingapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -24,13 +25,28 @@ import java.util.List;
 public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.OnPosterListener {
 
     private RecyclerView movieRecyclerView, promoRecyclerView, upcomingMovieRecyclerView;
+    TextView usernameDisplay;
+
+    SharedPreferences sharedPreferences;
+    private static final String SHARED_PREF_USERNAME = "myusername";
+    private static final String USERNAME_KEY = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        //Get username
+        usernameDisplay = findViewById(R.id.username_display);
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_USERNAME, MODE_PRIVATE);
+
+        String username = sharedPreferences.getString(USERNAME_KEY, null);
+
+        if (username != null){
+            usernameDisplay.setText(username);
+        }
+
+        /*/Get username
         Intent i = getIntent();
         String username = i.getStringExtra("username");
 
@@ -38,7 +54,7 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
             ((TextView)findViewById(R.id.username_display)).setText("User");
         }
         else
-            ((TextView)findViewById(R.id.username_display)).setText(username); //Display username
+            ((TextView)findViewById(R.id.username_display)).setText(username); *///Display username
 
         //Hide action bar
         try{
@@ -72,10 +88,10 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.nav_tickets:
-                    startActivity(new Intent(getApplicationContext(),Tickets.class));
+                    startActivity(new Intent(getApplicationContext(), Tickets.class));
                     overridePendingTransition(0,0);
                     return true;
-                case R.id.username_display:
+                case R.id.nav_profile:
                     startActivity(new Intent(getApplicationContext(), UserProfilePage.class));
                     overridePendingTransition(0,0);
                     return true;

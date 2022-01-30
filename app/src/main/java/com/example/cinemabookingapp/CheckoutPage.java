@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -23,13 +24,29 @@ public class CheckoutPage extends AppCompatActivity {
     Button pay;
     AlertDialog.Builder alertBuilder, alertBuilder2;
     private CheckBox payCash, payDebitCard;
-    public String paymentMode=null, paymentStatus=null, movieName="Eternals", movieDate="20 NOV";//You should convert movieName to movieDate to get Intent
-    //Get intent from BookingDetails for movieName, movieDate (for now, I included dummy data for this)
+    public String paymentMode=null, paymentStatus=null, chosenDate=null, movieName=null;
+
+    SharedPreferences sharedPreferences;
+
+    //Shared preferences name and key name for paymentMode, paymentStatus, chosenDate, movieName
+    private static final String SHARED_PREF_MOVNAME = "myMovieName";
+    private static final String MOVNAME_KEY = "movieName";
+    //private static final String SHARED_PREF_CHOSENDATE = "myChosenDate";
+    private static final String CHOSENDATE_KEY = "chosenDate";
+    //private static final String SHARED_PREF_PAYMODE = "myPayMode";
+    private static final String PAYMODE_KEY = "payMode";
+    //private static final String SHARED_PREF_PAYSTATUS = "myPayStatus";
+    private static final String PAYSTATUS_KEY = "payStatus";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_page);
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_MOVNAME,MODE_PRIVATE);
+        //sharedPreferences = getSharedPreferences(SHARED_PREF_CHOSENDATE,MODE_PRIVATE);
+        //sharedPreferences = getSharedPreferences(SHARED_PREF_PAYMODE,MODE_PRIVATE);
+        //sharedPreferences = getSharedPreferences(SHARED_PREF_PAYSTATUS,MODE_PRIVATE);
 
         //Check box
         payCash = findViewById(R.id.checkBox2);
@@ -72,16 +89,17 @@ public class CheckoutPage extends AppCompatActivity {
                                 }
 
                                 private void OpenTicketsPage() {
-                                    Intent intent = new Intent(CheckoutPage.this, Tickets.class);
-                                    //Get and send payment mode and status
                                     paymentMode = "Cash";
                                     paymentStatus = "Pending";
-                                    movieName = "Eternals"; //Change this to the data from previous activity
-                                    movieDate = "20 NOV"; //This too
-                                    intent.putExtra("paymentMode", paymentMode);
-                                    intent.putExtra("paymentStatus", paymentStatus);
-                                    intent.putExtra("movieName",movieName);
-                                    intent.putExtra("movieDate", movieDate);
+                                    chosenDate = getIntent().getStringExtra("chosenDate");
+                                    movieName = getIntent().getStringExtra("movieName");
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString(MOVNAME_KEY,movieName);
+                                    editor.putString(CHOSENDATE_KEY,chosenDate);
+                                    editor.putString(PAYMODE_KEY,paymentMode);
+                                    editor.putString(PAYSTATUS_KEY,paymentStatus);
+                                    editor.apply();
+                                    Intent intent = new Intent(CheckoutPage.this, Tickets.class);
                                     startActivity(intent);
                                 }
                             });
@@ -143,16 +161,17 @@ public class CheckoutPage extends AppCompatActivity {
                                         OpenTicketsPage();
                                     }
                                     private void OpenTicketsPage() {
-                                        Intent intent = new Intent(CheckoutPage.this, Tickets.class);
-                                        //Get and send payment mode and status
-                                        paymentMode = "Debit Card";
+                                        paymentMode = "Credit/Debit Card";
                                         paymentStatus = "Successful";
-                                        movieName = "Eternals"; //Change this to the data from previous activity
-                                        movieDate = "20 NOV"; //This too
-                                        intent.putExtra("paymentMode", paymentMode);
-                                        intent.putExtra("paymentStatus", paymentStatus);
-                                        intent.putExtra("movieName",movieName);
-                                        intent.putExtra("movieDate", movieDate);
+                                        chosenDate = getIntent().getStringExtra("chosenDate");
+                                        movieName = getIntent().getStringExtra("movieName");
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString(MOVNAME_KEY,movieName);
+                                        editor.putString(CHOSENDATE_KEY,chosenDate);
+                                        editor.putString(PAYMODE_KEY,paymentMode);
+                                        editor.putString(PAYSTATUS_KEY,paymentStatus);
+                                        editor.apply();
+                                        Intent intent = new Intent(CheckoutPage.this, Tickets.class);
                                         startActivity(intent);
                                     }
                                 });

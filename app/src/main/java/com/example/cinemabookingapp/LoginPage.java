@@ -3,6 +3,7 @@ package com.example.cinemabookingapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,11 @@ public class LoginPage extends AppCompatActivity {
     private Button buttonuserprofile;
     private TextInputLayout loginUsername;
     private TextInputLayout loginPassword;
+    SharedPreferences sharedPreferences;
+
+    //Shared preferences name and key name
+    private static final String SHARED_PREF_USERNAME = "myusername";
+    private static final String USERNAME_KEY = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,17 @@ public class LoginPage extends AppCompatActivity {
 
         loginUsername = findViewById(R.id.textInputLayout3);
         loginPassword = findViewById(R.id.textInputLayout2);
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_USERNAME,MODE_PRIVATE);
+
+        //When open activity, check if data in SharedPreferences is available or not
+        String username = sharedPreferences.getString(USERNAME_KEY, null);
+
+        if (username != null){
+            //If data is available, directly call on HomePage
+            Intent intent = new Intent(this, HomePage.class);
+            startActivity(intent);
+        }
 
         //Set button to home page
         buttonhomepage = (Button) findViewById(R.id.button3);
@@ -86,13 +103,14 @@ public class LoginPage extends AppCompatActivity {
         if (!validateUsername() |  !validatePassword() ){
             return;
         }
-            Intent intent = new Intent(this,HomePage.class);
-            //Get and send username
-            String username = ((TextInputEditText)findViewById(R.id.usernameInput)).getText().toString();
-            intent.putExtra("username",username); //pass one piece of data to an activity
-            Toast.makeText(this, "Welcome back to FlixPrime " + username, Toast.LENGTH_LONG).show();
-            startActivity(intent);
+        //Get and send username
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(USERNAME_KEY,loginUsername.getEditText().getText().toString());
+        editor.apply();
+        Intent intent = new Intent(this,HomePage.class);
+        startActivity(intent);
 
+        Toast.makeText(this, "Welcome back to FlixPrime " + loginUsername.getEditText().getText().toString(), Toast.LENGTH_LONG).show();
 
     }
 
