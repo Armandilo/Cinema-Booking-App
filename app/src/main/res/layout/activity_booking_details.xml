@@ -156,6 +156,8 @@
             android:id="@+id/promoCode"
             android:layout_width="213dp"
             android:layout_height="49dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/white"
             android:background="@drawable/search_movie_box"
             android:ems="10"
             android:inputType="number"
