@@ -5,18 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#161A1C"
-    android:padding="20dp"
+
     tools:context=".UserProfilePage"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="400dp"
         android:layout_height="00dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
         android:background="#546E7A"
-        android:padding="20dp">
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -66,11 +68,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="346dp"
+        android:layout_width="match_parent"
         android:layout_height="456dp"
-        android:layout_marginEnd="12dp"
         android:orientation="vertical"
-        android:padding="20dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +79,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -86,8 +88,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.009"
-            >
+            app:layout_constraintVertical_bias="0.009">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -99,6 +100,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -117,6 +119,7 @@
                 android:text="behjatriyaz@gmail.com" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/button2"
             android:layout_width="311dp"
@@ -141,28 +144,27 @@
             app:cornerRadius="35px"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.706" />
+            app:layout_constraintVertical_bias="0.742" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="311dp"
-            android:layout_height="67dp"
-            android:backgroundTint="#5769D0"
-            android:text="Change Password"
-            android:textAllCaps="false"
-            app:cornerRadius="35px"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:background="#263238"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.457"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.922" />
+            app:menu="@menu/bottom_navigation"
+            tools:ignore="MissingConstraints" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+

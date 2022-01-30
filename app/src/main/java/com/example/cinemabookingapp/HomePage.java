@@ -96,7 +96,7 @@ public class HomePage extends AppCompatActivity implements CurrentMoviesAdapter.
 
         List<Integer> promosList = new ArrayList<>();
 
-        promosList.add(R.drawable.promo_1);
+        promosList.add(R.drawable.promo_2);
         promosList.add(R.drawable.promo_2);
         promosList.add(R.drawable.promo_3);
 

@@ -41,6 +41,15 @@
             android:fontFamily="@font/poppins_light"
             android:text="Line 3"
             android:textSize="15sp" />
+        <TextView
+            android:id="@+id/movieSeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/movieLocationLayout"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Line 4"
+            android:textSize="15sp" />
 
 
 

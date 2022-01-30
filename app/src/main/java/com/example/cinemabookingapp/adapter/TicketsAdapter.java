@@ -1,5 +1,6 @@
 package com.example.cinemabookingapp.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cinemabookingapp.Item;
 import com.example.cinemabookingapp.R;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +21,10 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.TicketVi
 
 
     private ArrayList<Item> currentTicket;
+    Context context;
     //Constructor
-    public TicketsAdapter(ArrayList<Item> currentTicket){
+    public TicketsAdapter(Context context,ArrayList<Item> currentTicket){
+        this.context = context;
         this.currentTicket = currentTicket;
     }
 

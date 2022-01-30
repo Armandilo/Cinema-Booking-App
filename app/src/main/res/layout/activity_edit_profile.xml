@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#161A1C"
-    android:padding="20dp"
+
     tools:context=".EditProfile"
     android:orientation="vertical">
 
@@ -38,11 +38,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="346dp"
+        android:layout_width="match_parent"
         android:layout_height="456dp"
         android:layout_marginEnd="12dp"
         android:orientation="vertical"
-        android:padding="20dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +50,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -71,6 +72,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -90,28 +92,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:hint="To change enter password"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias=".70">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_lock_24"
-                android:drawablePadding="10dp"
-                android:text="Enter your password" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
 
         <Button
             android:id="@+id/button4"
@@ -123,13 +103,14 @@
             app:cornerRadius="35px"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.457"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.922" />
+            app:layout_constraintVertical_bias="0.737" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

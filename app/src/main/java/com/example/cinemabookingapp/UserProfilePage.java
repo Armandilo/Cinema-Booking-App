@@ -14,13 +14,16 @@ public class UserProfilePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile_page);
+        try{
+            this.getSupportActionBar().hide();
+        }
+        catch(NullPointerException e){}
 
 
 
 
 
-
-        buttonchangepassword = (Button) findViewById(R.id.button4);
+        /*buttonchangepassword = (Button) findViewById(R.id.button4);
         buttonchangepassword.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v)
@@ -34,24 +37,21 @@ public class UserProfilePage extends AppCompatActivity {
             @Override
             public void onClick(View v) { OpenEditProfiler(); }
         });
+*/
 
 
 
-        try{
-            this.getSupportActionBar().hide();
-        }
-        catch(NullPointerException e){}
 
     }
-    public void OpenChangePassword(){
-        Intent intent = new Intent(this,ChangePassword.class);
-        startActivity(intent);
-    }
+    //public void OpenChangePassword(){
+     //   Intent intent = new Intent(this,ChangePassword.class);
+     //   startActivity(intent);
+   // }
 
-    public void OpenEditProfiler(){
+   /* public void OpenEditProfiler(){
         Intent intent = new Intent(this,EditProfile.class);
         startActivity(intent);
-    }
+    }*/
 
 }
 

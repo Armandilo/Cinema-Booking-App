@@ -24,6 +24,11 @@ import com.example.cinemabookingapp.adapter.CurrentMoviesAdapter;
 import com.example.cinemabookingapp.adapter.TicketsAdapter;
 import com.example.cinemabookingapp.adapter.TicketsAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +38,12 @@ public class Tickets extends AppCompatActivity {
     private RecyclerView ticketsRecycler;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayout;
+    DatabaseReference ticketRef;
     ListView listView;
     ScrollView scrollView;
     ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
-
+    ArrayList<Item> currentTicket;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +55,7 @@ public class Tickets extends AppCompatActivity {
         catch(NullPointerException e){}
 
 
+
         //Get intent from CheckoutPage.class
 
         //Get name of movie
@@ -58,6 +65,8 @@ public class Tickets extends AppCompatActivity {
         //Get time of movie
 
         String chosenDate = getIntent().getStringExtra("chosenDate");
+        Intent callerIntent = getIntent();
+
         String chosenTime = getIntent().getStringExtra("chosenTime");
         String chosenSeat = getIntent().getStringExtra("chosenSeat");
         String hall = getIntent().getStringExtra("hall");
@@ -92,21 +101,50 @@ public class Tickets extends AppCompatActivity {
         });
         listView = findViewById(R.id.listView);
         scrollView = findViewById(R.id.scroll);
-
+        currentTicket = new ArrayList<Item>();
+        bottomNavigationView.setSelectedItemId(R.id.nav_tickets);
+        ticketRef = FirebaseDatabase.getInstance("https://cinemabooking-7588f-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("Tickets");
         //Set Tickets Selected
         if(movieName != null)
         {
-            bottomNavigationView.setSelectedItemId(R.id.nav_tickets);
-            ArrayList<Item> currentTicket = new ArrayList<Item>();
-            currentTicket.add(new Item(movieName,finalDate,CinemaLocation));
-            ticketsRecycler = findViewById(R.id.ticketsRecycler);
-            ticketsRecycler.setHasFixedSize(true);
-            mLayout = new LinearLayoutManager(this);
-            mAdapter = new TicketsAdapter(currentTicket);
-            ticketsRecycler.setLayoutManager(mLayout);
-            ticketsRecycler.setAdapter(mAdapter);
+
+            Item ticket1 = new Item();
+            ticket1.setText1(movieName);
+            ticket1.setText2(finalDate);
+            ticket1.setText3(CinemaLocation);
+            ticket1.setText4(chosenSeat);
+            ticketRef.push().setValue(ticket1);
 
         }
+
+        ticketsRecycler = findViewById(R.id.ticketsRecycler);
+        ticketsRecycler.setHasFixedSize(true);
+        mLayout = new LinearLayoutManager(this);
+        mAdapter = new TicketsAdapter(this,currentTicket);
+        ticketsRecycler.setLayoutManager(mLayout);
+        ticketsRecycler.setAdapter(mAdapter);
+        ticketRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    if(dataSnapshot.exists())
+                    {
+                        Item ticket = dataSnapshot.getValue(Item.class);
+                        currentTicket.add(ticket);
+                        mAdapter.notifyDataSetChanged();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
 
 
 
