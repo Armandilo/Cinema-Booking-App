@@ -18,11 +18,12 @@ public class MovieDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
+        try{
+            this.getSupportActionBar().hide();
+        }
+        catch(NullPointerException e){}
+
         String moviename = "ESCAPE ROOM";
-
-
-
-
 
         int position = getIntent().getIntExtra("movie", 0);
 

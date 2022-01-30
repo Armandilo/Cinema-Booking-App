@@ -28,6 +28,11 @@ public class BookingDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_details);
 
+        try{
+            this.getSupportActionBar().hide();
+        }
+        catch(NullPointerException e){}
+
         //Get intent from previous activity
         //Get number of tickets
         Intent callerIntent = getIntent();

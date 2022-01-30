@@ -31,6 +31,11 @@ public class CheckoutPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_page);
 
+        try{
+            this.getSupportActionBar().hide();
+        }
+        catch(NullPointerException e){}
+
         String movieName = getIntent().getStringExtra("movieName");
         String chosenTime = getIntent().getStringExtra("choseTime");
         String chosenSeat = getIntent().getStringExtra("chosenSeat");

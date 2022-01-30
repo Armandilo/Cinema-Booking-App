@@ -21,8 +21,14 @@ public class selectseat extends AppCompatActivity {
     AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selectseat);
+
+        try{
+            this.getSupportActionBar().hide();
+        }
+        catch(NullPointerException e){}
 
         final String[] chosenSeat = {""};
         final Integer[] counter = {0};
