@@ -42,6 +42,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.TicketVi
         holder.mText1.setText(currentItem.getText1());
         holder.mText2.setText(currentItem.getText2());
         holder.mText3.setText(currentItem.getText3());
+        holder.mText4.setText(currentItem.getText4());
     }
 
     @Override
@@ -53,6 +54,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.TicketVi
         public TextView mText1;
         public TextView mText2;
         public TextView mText3;
+        public TextView mText4;
         private ImageView imageView;
         public TicketViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,7 +62,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.TicketVi
             mText1 = itemView.findViewById(R.id.movieNameLayout);
             mText2 = itemView.findViewById(R.id.movieDateLayout);
             mText3 = itemView.findViewById(R.id.movieLocationLayout);
-
+            mText4 = itemView.findViewById(R.id.movieSeat);
 
             imageView = itemView.findViewById(R.id.tickets);
         }
