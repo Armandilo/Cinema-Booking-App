@@ -88,11 +88,10 @@ public class BookingDetails extends AppCompatActivity {
 
 
         //Total Price
-        Double totalPrice = 0.0;
+        Double totalPrice;
+
         totalPrice = (ticketNum * 14) - priceDeducted;
-        BigDecimal bd = new BigDecimal(totalPrice).setScale(2, RoundingMode.HALF_UP);
-        double newTotalPrice = bd.doubleValue();
-        ((TextView)findViewById(R.id.totalPrice)).setText("RM" + String.valueOf(newTotalPrice));
+        ((TextView)findViewById(R.id.totalPrice)).setText("RM" + String.format("%,.2f", totalPrice));
 
         //Set button to checkout page*/
         buttoncheckoutpage = (Button) findViewById(R.id.button6);
